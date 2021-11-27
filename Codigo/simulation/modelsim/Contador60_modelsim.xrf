@@ -4,6 +4,7 @@ source_file = 1, controlvhd.vhd
 source_file = 1, D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/ffD_en.vhd
 source_file = 1, D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/divisor_de_frecuencia.vhd
 source_file = 1, D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/control.vhd
+source_file = 1, D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/antirrebote.vhd
 source_file = 1, d:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, d:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, d:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd

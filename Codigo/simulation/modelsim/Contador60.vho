@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/26/2021 20:12:51"
+-- DATE "11/26/2021 20:58:02"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -82,7 +82,7 @@ ENTITY 	control IS
 	start : IN std_logic;
 	stop : IN std_logic;
 	clk : IN std_logic;
-	q : OUT std_logic
+	q : BUFFER std_logic
 	);
 END control;
 

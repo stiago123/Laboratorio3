@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Contador60
-Fri Nov 26 20:12:43 2021
+Fri Nov 26 20:57:54 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 26 20:12:43 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 26 20:57:54 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Contador60                                  ;
 ; Top-level Entity Name              ; control                                     ;
@@ -261,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 26 20:12:35 2021
+    Info: Processing started: Fri Nov 26 20:57:46 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Contador60 -c Contador60
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -278,6 +278,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file divisor
 Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
     Info (12022): Found design unit 1: control-comportamiento File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/control.vhd Line: 22
     Info (12023): Found entity 1: control File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/control.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file antirrebote.vhd
+    Info (12022): Found design unit 1: antirrebote-comportamiento File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/antirrebote.vhd Line: 21
+    Info (12023): Found entity 1: antirrebote File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/antirrebote.vhd Line: 6
 Info (12127): Elaborating entity "control" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -287,8 +290,8 @@ Info (21057): Implemented 5 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4849 megabytes
-    Info: Processing ended: Fri Nov 26 20:12:43 2021
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Fri Nov 26 20:57:54 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:19
 

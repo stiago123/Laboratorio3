@@ -21,7 +21,11 @@ end control;
 
 architecture comportamiento of control is
 
-	
+	signal slow_clock: std_logic := '0';
+	signal slow_counter: integer := 0;
+
+	signal temp1, temp2, temp3, temp4: std_logic;
+	signal dutyUp, dutyDown: std_logic;
 begin
 	process(clk)
 	begin
