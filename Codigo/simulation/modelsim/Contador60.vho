@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/26/2021 20:58:02"
+-- DATE "11/27/2021 16:18:33"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -70,30 +70,31 @@ ww_devpor <= devpor;
 END structure;
 
 
-LIBRARY ALTERA;
 LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
-USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY 	control IS
+ENTITY 	contador IS
     PORT (
-	start : IN std_logic;
-	stop : IN std_logic;
+	reset : IN std_logic;
 	clk : IN std_logic;
-	q : BUFFER std_logic
+	num : BUFFER std_logic_vector(5 DOWNTO 0)
 	);
-END control;
+END contador;
 
 -- Design Ports Information
--- q	=>  Location: PIN_1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- start	=>  Location: PIN_143,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- stop	=>  Location: PIN_3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clk	=>  Location: PIN_2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- reset	=>  Location: PIN_24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[0]	=>  Location: PIN_44,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[1]	=>  Location: PIN_113,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[2]	=>  Location: PIN_86,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[3]	=>  Location: PIN_72,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[4]	=>  Location: PIN_85,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- num[5]	=>  Location: PIN_59,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
-ARCHITECTURE structure OF control IS
+ARCHITECTURE structure OF contador IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -103,16 +104,17 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
-SIGNAL ww_start : std_logic;
-SIGNAL ww_stop : std_logic;
+SIGNAL ww_reset : std_logic;
 SIGNAL ww_clk : std_logic;
-SIGNAL ww_q : std_logic;
-SIGNAL \q~output_o\ : std_logic;
+SIGNAL ww_num : std_logic_vector(5 DOWNTO 0);
+SIGNAL \reset~input_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \stop~input_o\ : std_logic;
-SIGNAL \start~input_o\ : std_logic;
-SIGNAL \q~0_combout\ : std_logic;
-SIGNAL \q~reg0_q\ : std_logic;
+SIGNAL \num[0]~output_o\ : std_logic;
+SIGNAL \num[1]~output_o\ : std_logic;
+SIGNAL \num[2]~output_o\ : std_logic;
+SIGNAL \num[3]~output_o\ : std_logic;
+SIGNAL \num[4]~output_o\ : std_logic;
+SIGNAL \num[5]~output_o\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -123,10 +125,9 @@ END COMPONENT;
 
 BEGIN
 
-ww_start <= start;
-ww_stop <= stop;
+ww_reset <= reset;
 ww_clk <= clk;
-q <= ww_q;
+num <= ww_num;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -136,19 +137,90 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X0_Y23_N2
-\q~output\ : cycloneive_io_obuf
+-- Location: IOOBUF_X5_Y0_N16
+\num[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \q~reg0_q\,
+	i => GND,
 	devoe => ww_devoe,
-	o => \q~output_o\);
+	o => \num[0]~output_o\);
 
--- Location: IOIBUF_X0_Y23_N8
+-- Location: IOOBUF_X28_Y24_N9
+\num[1]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \num[1]~output_o\);
+
+-- Location: IOOBUF_X34_Y9_N2
+\num[2]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \num[2]~output_o\);
+
+-- Location: IOOBUF_X32_Y0_N9
+\num[3]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \num[3]~output_o\);
+
+-- Location: IOOBUF_X34_Y9_N9
+\num[4]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \num[4]~output_o\);
+
+-- Location: IOOBUF_X23_Y0_N16
+\num[5]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false")
+-- pragma translate_on
+PORT MAP (
+	i => GND,
+	devoe => ww_devoe,
+	o => \num[5]~output_o\);
+
+-- Location: IOIBUF_X0_Y11_N15
+\reset~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_reset,
+	o => \reset~input_o\);
+
+-- Location: IOIBUF_X0_Y11_N22
 \clk~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -159,59 +231,17 @@ PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
 
--- Location: IOIBUF_X0_Y23_N15
-\stop~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_stop,
-	o => \stop~input_o\);
+ww_num(0) <= \num[0]~output_o\;
 
--- Location: IOIBUF_X1_Y24_N1
-\start~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_start,
-	o => \start~input_o\);
+ww_num(1) <= \num[1]~output_o\;
 
--- Location: LCCOMB_X1_Y23_N16
-\q~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \q~0_combout\ = (!\stop~input_o\ & ((\q~reg0_q\) # (\start~input_o\)))
+ww_num(2) <= \num[2]~output_o\;
 
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010101010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \stop~input_o\,
-	datac => \q~reg0_q\,
-	datad => \start~input_o\,
-	combout => \q~0_combout\);
+ww_num(3) <= \num[3]~output_o\;
 
--- Location: FF_X1_Y23_N17
-\q~reg0\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~input_o\,
-	d => \q~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \q~reg0_q\);
+ww_num(4) <= \num[4]~output_o\;
 
-ww_q <= \q~output_o\;
+ww_num(5) <= \num[5]~output_o\;
 END structure;
 
 

@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+
+entity contador is
+port (
+		reset: in std_logic;
+		clk: in std_logic;
+		
+		num: out std_logic_vector(5 downto 0)
+	);
+end contador;
+
+architecture contadorisacion of multiplexor is
+begin
+ffjk0: ffjJK port map(1 ,1 , clk, q0);
+ffjk1: ffjJK port map(q0 ,q0 , clk, q1);
+ffjk2: ffjJK port map(q0 and q1 ,q0 and q1 , clk, q2);
+ffjk3: ffjJK port map(q0 and q1 and q2 ,q0 and q1 and q2 , clk, q3);
+ffjk4: ffjJK port map(q0 and q1 and q2 and q3 ,q0 and q1 and q2 and q3 , clk, q4);
+ffjk5: ffjJK port map(q0 and q1 and q2 and q3 and q4 ,q0 and q1 and q2 and q3 and q4 , clk, q5);
+	
+end contadorisacion;
