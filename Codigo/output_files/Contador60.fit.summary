@@ -1,15 +1,15 @@
-Fitter Status : Successful - Fri Nov 26 19:52:54 2021
+Fitter Status : Successful - Fri Nov 26 20:12:47 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Contador60
-Top-level Entity Name : divisor_de_frecuencia
+Top-level Entity Name : control
 Family : Cyclone IV E
 Device : EP4CE10E22C8
 Timing Models : Final
-Total logic elements : 0 / 10,320 ( 0 % )
-    Total combinational functions : 0 / 10,320 ( 0 % )
-    Dedicated logic registers : 0 / 10,320 ( 0 % )
-Total registers : 0
-Total pins : 34 / 92 ( 37 % )
+Total logic elements : 1 / 10,320 ( < 1 % )
+    Total combinational functions : 1 / 10,320 ( < 1 % )
+    Dedicated logic registers : 1 / 10,320 ( < 1 % )
+Total registers : 1
+Total pins : 4 / 92 ( 4 % )
 Total virtual pins : 0
 Total memory bits : 0 / 423,936 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
