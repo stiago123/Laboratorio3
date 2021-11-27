@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
--- DATE "11/27/2021 16:18:33"
+-- DATE "11/27/2021 17:48:54"
 
 -- 
 -- Device: Altera EP4CE10E22C8 Package TQFP144
@@ -79,7 +79,7 @@ ENTITY 	contador IS
     PORT (
 	reset : IN std_logic;
 	clk : IN std_logic;
-	num : BUFFER std_logic_vector(5 DOWNTO 0)
+	num : OUT std_logic_vector(5 DOWNTO 0)
 	);
 END contador;
 
