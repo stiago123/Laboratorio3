@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity divisor_de_frecuencia is
+	port
+	(
+	clk: 		in 	std_logic;
+	fout: 	in 	integer;
+	
+	clkout: 	out 	std_logic;
+	
+end divisor_de_frecuencia;
+
+architecture comportamiento of divisor_de_frecuencia is
+
+	signal fclk: 	integer := 50000000;
+	signal cuenta: integer :=0;
+	signal n:		integer :=0;
+	n=fclk/fout;
+
+begin
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			if cuentaPer = 500000000 then
+				cuentaPer <=0;
+			else
+				cuentaPer<=cuentaPer+1;
+			end if;
+		end if;
+	end process;
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			if cuentaPer > cuentaTao then
+				fout <= '1';
+			else 
+				fout <= '0';
+			end if;
+		end if;
+	end process;
