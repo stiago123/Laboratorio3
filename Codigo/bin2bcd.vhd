@@ -20,9 +20,9 @@ variable vector: std_logic_vector(13 downto 0);
 
 begin
 
-	for i in 0 to 13 loop
-	vector(i):= '0';
-	end loop;
+	--for i in 0 to 13 loop
+	--vector(i)<= '0';
+	--end loop;
 	
 	
 	vector(8 downto 3):= bin;

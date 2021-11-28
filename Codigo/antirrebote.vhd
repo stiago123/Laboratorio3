@@ -33,7 +33,7 @@ architecture comportamiento of antirrebote is
 	signal slow_counter: integer := 0;
 
 	signal temp1, temp2, temp3, temp4: std_logic;
-	signal salidastart, salidadown: std_logic;
+	--signal salidastart, salidastop: std_logic;
 	
 	
 	begin
@@ -42,15 +42,15 @@ architecture comportamiento of antirrebote is
 	begin
 	if rising_edge(clk) then
 		slow_counter <= slow_counter+1;
-		--if slow_counter >= 12500000 then -- para la fpga
-		if slow_counter >= 1 			then --para la simulación
+		if slow_counter >= 12500000 then -- para la fpga
+		--if slow_counter >= 1 			then --para la simulación
 			slow_counter <= 0;
 		end if;
 	end if;
 	end process;
 	
-		--slow_clock <= '1' when slow_counter = 12500000 else '0'; -- fpga
-		slow_clock <= '1' when slow_counter = 1	else '0'; -- simulación
+		slow_clock <= '1' when slow_counter = 12500000 else '0'; -- fpga
+		--slow_clock <= '1' when slow_counter = 1	else '0'; -- simulación
 	
 		etapa0: ffD_en port map(clk, slow_clock, not botonstart, temp1);
 		etapa1: ffD_en port map(clk, slow_clock, temp1, temp2);

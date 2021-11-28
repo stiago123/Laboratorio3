@@ -30,7 +30,7 @@ begin
 				q <= '1';
 			end if;
 			if stop = '1' then
-				q<='0';
+				q<= '0';
 			end if;
 		end if;
 	end process;
