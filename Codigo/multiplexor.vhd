@@ -5,19 +5,24 @@ use ieee.std_logic_unsigned.all;
 
 entity multiplexor is
 port (
-		num: in std_logic_vector(0 to 7);
+		bcdin: in std_logic_vector(7 downto 0);
+		bitdes: in std_logic;
 		clk: in std_logic;
 		
-		sal: out std_logic
+		bcdout: out std_logic_vector(3 downto 0)
 	);
 end multiplexor;
 
 architecture funcion of multiplexor is
 begin
-	if clk = '0' then 
-		sal<= num(0,1,2,3);
+	process(clk)
+	begin
+	if rising_edge(clk) then
+		if bitdes = '0' then
+			bcdout <= bcdin(3 downto 0);
+		else 
+			bcdout <= bcdin(3 downto 0);
+		end if;
 	end if;
-	if clk = '1' then
-		sal <= num(4,5,6,7);
-	end if;
+	end process;
 end funcion;

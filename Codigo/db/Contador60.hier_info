@@ -1,69 +1,20 @@
-|contador
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-reset => comb.IN1
-clk => ffJK:ffjk0.clk
-clk => ffJK:ffjk1.clk
-clk => ffJK:ffjk2.clk
-clk => ffJK:ffjk3.clk
-clk => ffJK:ffjk4.clk
-clk => ffJK:ffjk5.clk
-num[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-num[1] <= num[1].DB_MAX_OUTPUT_PORT_TYPE
-num[2] <= num[2].DB_MAX_OUTPUT_PORT_TYPE
-num[3] <= num[3].DB_MAX_OUTPUT_PORT_TYPE
-num[4] <= num[4].DB_MAX_OUTPUT_PORT_TYPE
-num[5] <= num[5].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk0
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk1
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk2
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk3
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk4
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|contador|ffJK:ffjk5
-J => Mux0.IN4
-K => Mux0.IN5
-clk => qout.CLK
-Q <= qout.DB_MAX_OUTPUT_PORT_TYPE
+|multiplexor
+bcdin[0] => bcdout[0]~reg0.DATAIN
+bcdin[1] => bcdout[1]~reg0.DATAIN
+bcdin[2] => bcdout[2]~reg0.DATAIN
+bcdin[3] => bcdout[3]~reg0.DATAIN
+bcdin[4] => ~NO_FANOUT~
+bcdin[5] => ~NO_FANOUT~
+bcdin[6] => ~NO_FANOUT~
+bcdin[7] => ~NO_FANOUT~
+bitdes => ~NO_FANOUT~
+clk => bcdout[0]~reg0.CLK
+clk => bcdout[1]~reg0.CLK
+clk => bcdout[2]~reg0.CLK
+clk => bcdout[3]~reg0.CLK
+bcdout[0] <= bcdout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdout[1] <= bcdout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdout[2] <= bcdout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+bcdout[3] <= bcdout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
