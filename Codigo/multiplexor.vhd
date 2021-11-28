@@ -21,7 +21,7 @@ begin
 		if bitdes = '0' then
 			bcdout <= bcdin(3 downto 0);
 		else 
-			bcdout <= bcdin(3 downto 0);
+			bcdout <= bcdin(7 downto 4);
 		end if;
 	end if;
 	end process;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Contador60
-Sat Nov 27 21:36:45 2021
+Sat Nov 27 22:54:38 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,19 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "bcd27seg:bloquebcdseg"
+ 12. Port Connectivity Checks: "divisor_de_frecuencia:bloquefreq60"
+ 13. Port Connectivity Checks: "divisor_de_frecuencia:bloquefreq1"
+ 14. Port Connectivity Checks: "control:bloqueCtrl"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +49,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Nov 27 21:36:45 2021           ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 27 22:54:38 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Contador60                                  ;
-; Top-level Entity Name              ; bcd27seg                                    ;
+; Top-level Entity Name              ; Contador60                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 57                                          ;
+;     Total combinational functions  ; 56                                          ;
+;     Dedicated logic registers      ; 33                                          ;
+; Total registers                    ; 33                                          ;
+; Total pins                         ; 13                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -60,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE10E22C8       ;                    ;
-; Top-level entity name                                            ; bcd27seg           ; Contador60         ;
+; Top-level entity name                                            ; Contador60         ; Contador60         ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -149,11 +161,208 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; Contador60.vhd                   ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd            ;         ;
+; ffD_en.vhd                       ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/ffD_en.vhd                ;         ;
+; divisor_de_frecuencia.vhd        ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/divisor_de_frecuencia.vhd ;         ;
+; control.vhd                      ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/control.vhd               ;         ;
+; antirrebote.vhd                  ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/antirrebote.vhd           ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/contador.vhd              ;         ;
+; ffJK.vhd                         ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/ffJK.vhd                  ;         ;
+; multiplexor.vhd                  ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/multiplexor.vhd           ;         ;
+; bin2bcd.vhd                      ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd               ;         ;
+; bcd27seg.vhd                     ; yes             ; User VHDL File  ; D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bcd27seg.vhd              ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 57        ;
+;                                             ;           ;
+; Total combinational functions               ; 56        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 10        ;
+;     -- 3 input functions                    ; 0         ;
+;     -- <=2 input functions                  ; 46        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 25        ;
+;     -- arithmetic mode                      ; 31        ;
+;                                             ;           ;
+; Total registers                             ; 33        ;
+;     -- Dedicated logic registers            ; 33        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 13        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 33        ;
+; Total fan-out                               ; 212       ;
+; Average fan-out                             ; 1.84      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name           ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------------+--------------+
+; |Contador60                            ; 56 (0)              ; 33 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |Contador60                                   ; Contador60            ; work         ;
+;    |divisor_de_frecuencia:bloquefreq1| ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Contador60|divisor_de_frecuencia:bloquefreq1 ; divisor_de_frecuencia ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++--------------------------------------------------+----------------------------------------+
+; Register name                                    ; Reason for Removal                     ;
++--------------------------------------------------+----------------------------------------+
+; multiplexor:bloqueMult|bcdout[0..3]              ; Stuck at GND due to stuck port data_in ;
+; divisor_de_frecuencia:bloquefreq60|cuenta[0..31] ; Lost fanout                            ;
+; Total Number of Removed Registers = 36           ;                                        ;
++--------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                         ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+; Register name                                 ; Reason for Removal ; Registers Removed due to This Register         ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+; divisor_de_frecuencia:bloquefreq60|cuenta[31] ; Lost Fanouts       ; divisor_de_frecuencia:bloquefreq60|cuenta[30], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[29], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[28], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[27], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[26], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[25], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[24], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[23], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[22], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[21], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[20], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[19], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[18], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[17], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[16], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[15], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[14], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[13], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[12], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[11], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[10], ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[9],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[8],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[7],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[6],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[5],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[4],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[3],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[2],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[1],  ;
+;                                               ;                    ; divisor_de_frecuencia:bloquefreq60|cuenta[0]   ;
++-----------------------------------------------+--------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 33    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bcd27seg:bloquebcdseg"                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "divisor_de_frecuencia:bloquefreq60" ;
++-------------+-------+----------+-------------------------------+
+; Port        ; Type  ; Severity ; Details                       ;
++-------------+-------+----------+-------------------------------+
+; fout[5..2]  ; Input ; Info     ; Stuck at VCC                  ;
+; fout[31..6] ; Input ; Info     ; Stuck at GND                  ;
+; fout[1..0]  ; Input ; Info     ; Stuck at GND                  ;
++-------------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "divisor_de_frecuencia:bloquefreq1" ;
++-------------+-------+----------+------------------------------+
+; Port        ; Type  ; Severity ; Details                      ;
++-------------+-------+----------+------------------------------+
+; fout[31..1] ; Input ; Info     ; Stuck at GND                 ;
+; fout[0]     ; Input ; Info     ; Stuck at VCC                 ;
++-------------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control:bloqueCtrl"                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 33                          ;
+;     plain             ; 33                          ;
+; cycloneiii_lcell_comb ; 59                          ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 31                          ;
+;     normal            ; 28                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 14                          ;
+;         4 data inputs ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 3.69                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,12 +371,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Nov 27 21:36:38 2021
+    Info: Processing started: Sat Nov 27 22:54:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Contador60 -c Contador60
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file contador60.vhd
-    Info (12022): Found design unit 1: Contador60-comportamiento File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 20
+    Info (12022): Found design unit 1: Contador60-comportamiento File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 21
     Info (12023): Found entity 1: Contador60 File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 6
 Warning (12019): Can't analyze file -- file controlvhd.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file ffd_en.vhd
@@ -191,17 +400,51 @@ Info (12021): Found 2 design units, including 1 entities, in source file ffjk.vh
 Info (12021): Found 2 design units, including 1 entities, in source file multiplexor.vhd
     Info (12022): Found design unit 1: multiplexor-funcion File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/multiplexor.vhd Line: 16
     Info (12023): Found entity 1: multiplexor File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/multiplexor.vhd Line: 6
-Error (10500): VHDL syntax error at bin2bcd.vhd(38) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword) File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd Line: 38
-Error (10500): VHDL syntax error at bin2bcd.vhd(41) near text "loop";  expecting "if" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd Line: 41
-Error (10500): VHDL syntax error at bin2bcd.vhd(47) near text "process";  expecting "loop" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd Line: 47
-Info (12021): Found 0 design units, including 0 entities, in source file bin2bcd.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd.vhd
+    Info (12022): Found design unit 1: bin2bcd-funcion File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd Line: 14
+    Info (12023): Found entity 1: bin2bcd File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bin2bcd.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file bcd27seg.vhd
     Info (12022): Found design unit 1: bcd27seg-funcion File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bcd27seg.vhd Line: 14
     Info (12023): Found entity 1: bcd27seg File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bcd27seg.vhd Line: 6
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 2 warnings
-    Error: Peak virtual memory: 4765 megabytes
-    Error: Processing ended: Sat Nov 27 21:36:45 2021
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:18
+Info (12127): Elaborating entity "Contador60" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Contador60.vhd(98): object "q" assigned a value but never read File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 98
+Info (12128): Elaborating entity "antirrebote" for hierarchy "antirrebote:bloqueAntir" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 108
+Info (12128): Elaborating entity "ffD_en" for hierarchy "antirrebote:bloqueAntir|ffD_en:etapa0" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/antirrebote.vhd Line: 55
+Info (12128): Elaborating entity "control" for hierarchy "control:bloqueCtrl" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 109
+Info (12128): Elaborating entity "divisor_de_frecuencia" for hierarchy "divisor_de_frecuencia:bloquefreq1" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 110
+Warning (10540): VHDL Signal Declaration warning at divisor_de_frecuencia.vhd(20): used explicit default value for signal "fclk" because signal was never assigned a value File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/divisor_de_frecuencia.vhd Line: 20
+Info (12128): Elaborating entity "contador" for hierarchy "contador:bloqueCont" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 112
+Warning (10541): VHDL Signal Declaration warning at contador.vhd(12): used implicit default value for signal "num" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/contador.vhd Line: 12
+Info (12128): Elaborating entity "ffJK" for hierarchy "contador:bloqueCont|ffJK:ffjk0" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/contador.vhd Line: 33
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:bloquebinBCD" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 113
+Info (12128): Elaborating entity "multiplexor" for hierarchy "multiplexor:bloqueMult" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 114
+Info (12128): Elaborating entity "bcd27seg" for hierarchy "bcd27seg:bloquebcdseg" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at bcd27seg.vhd(19): signal "bcd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/bcd27seg.vhd Line: 19
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segs[0]" is stuck at VCC File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[1]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[2]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[3]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[4]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[5]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+    Warning (13410): Pin "segs[6]" is stuck at GND File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "inicio" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 9
+    Warning (15610): No output dependent on input pin "alto" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 10
+    Warning (15610): No output dependent on input pin "restart" File: D:/Desktop/6Sem/Digital/Practica/Laboratorios/Laboratorio3/Codigo/Contador60.vhd Line: 11
+Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 57 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Sat Nov 27 22:54:38 2021
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 
