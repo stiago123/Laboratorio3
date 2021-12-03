@@ -3,75 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.940
-TNS   : -124.932
-
-Type  : Slow 1200mV 85C Model Setup 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : -1.949
-TNS   : -3.649
-
-Type  : Slow 1200mV 85C Model Hold 'bin2bcd:bloquebinBCD|vector[10]'
 Slack : 0.114
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.620
+Slack : 0.485
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.532
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : 0.439
-TNS   : 0.000
+TNS   : -4.487
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.631
-TNS   : -114.361
-
-Type  : Slow 1200mV 0C Model Setup 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : -1.815
-TNS   : -3.367
-
-Type  : Slow 1200mV 0C Model Hold 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : 0.091
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.565
+Slack : 0.430
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.532
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : 0.373
-TNS   : 0.000
+TNS   : -4.487
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.039
-TNS   : -31.208
-
-Type  : Fast 1200mV 0C Model Setup 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : -0.266
-TNS   : -0.421
-
-Type  : Fast 1200mV 0C Model Hold 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : 0.043
+Slack : 0.626
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.254
+Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -41.651
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bin2bcd:bloquebinBCD|vector[10]'
-Slack : 0.413
-TNS   : 0.000
+TNS   : -4.047
 
 ------------------------------------------------------------
