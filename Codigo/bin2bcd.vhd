@@ -1,47 +1,53 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
 
 entity bin2bcd is
 port (
-		clk: in std_logic;
-		bin: in std_logic_vector(5 downto 0);
-		bcd :out std_logic_vector(7 downto 0)
+	clk	:	in	std_logic;
+	bin	:	in	integer range 0 to 255;
+	bcd: out std_logic_vector (7 downto 0)
+	
 	);
 end bin2bcd;
 
-architecture funcion of bin2bcd is
-
+architecture conversor of bin2bcd is
+	signal contador:	integer range 0 to 500000000 := 0;
+	signal bcdout :	std_logic_vector(7 downto 0);
+	signal tempBCD:	std_logic_vector(15	downto 0) := "0000000000000000";
+	signal numciclo:	integer range 0 to 1000000000:= 1;
 begin
-
-process(bin)
-variable vector: std_logic_vector(13 downto 0);
-
-begin
-
-	--for i in 0 to 13 loop
-	--vector(i)<= '0';
-	--end loop;
 	
-	
-	vector(8 downto 3):= bin;
-	
-	for i in 0 to 4 loop
+	bcd <= bcdout;
 
-		if vector(9 downto 6)>4 then
-		vector(9 downto 6):= vector(9 downto 6)+3;
+	process(clk)
+	begin
+		if rising_edge(clk) then
+			if	numciclo = 1 then
+				tempBCD(8 downto 1) <= std_logic_vector(to_unsigned(bin,8));
+				numciclo <= numciclo + 1;
+			elsif numciclo > 1 and numciclo < 9 then
+				if to_integer(unsigned(tempBCD(11 downto 8))) >= 5 then
+						tempBCD <= std_logic_vector(shift_left(unsigned(tempBCD +  "0000001100000000"),1));
+					else 
+						tempBCD <= std_logic_vector(shift_left(unsigned(tempBCD),1));
+				end if;
+					numciclo <= numciclo + 1;
+			else 
+				bcdout <= tempBCD(15 downto 8);
+				if numciclo <= 1000000 then
+					numciclo <= numciclo +1;
+				else 
+					numciclo <= 1;
+					tempBCD <= "0000000000000000";
+				end if;
+				
+			end if;
 		end if;
-		
-		if vector(13 downto 10)>4 then
-		vector(13 downto 10):= vector(13 downto 10)+3;
-		end if;
-		
-	end loop;
-  
-bcd <= vector(13 downto 6);
+	end process;
+	
 
 
-  
-end process;
-end funcion;
+
+end conversor;

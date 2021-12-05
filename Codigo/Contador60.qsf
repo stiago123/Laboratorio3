@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE10E22C8
-set_global_assignment -name TOP_LEVEL_ENTITY bcd27seg
+set_global_assignment -name TOP_LEVEL_ENTITY Contador60
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:28:38  NOVEMBER 19, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
@@ -70,14 +70,17 @@ set_location_assignment PIN_23 -to clk
 set_location_assignment PIN_87 -to inicio
 set_location_assignment PIN_86 -to alto
 set_location_assignment PIN_90 -to restart
-set_location_assignment PIN_75 -to numerocont[0]
-set_location_assignment PIN_77 -to numerocont[1]
-set_location_assignment PIN_84 -to numerocont[2]
-set_location_assignment PIN_80 -to numerocont[3]
-set_location_assignment PIN_74 -to numerocont[4]
-set_location_assignment PIN_72 -to numerocont[5]
+set_global_assignment -name VHDL_FILE contadorgabo.vhd
+set_location_assignment PIN_128 -to ti0
+set_location_assignment PIN_129 -to ti1
+set_location_assignment PIN_127 -to segs[6]
+set_location_assignment PIN_126 -to segs[5]
+set_location_assignment PIN_125 -to segs[4]
+set_location_assignment PIN_124 -to segs[3]
+set_location_assignment PIN_121 -to segs[2]
+set_location_assignment PIN_120 -to segs[1]
+set_location_assignment PIN_119 -to segs[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name VHDL_FILE contadorgabo.vhd

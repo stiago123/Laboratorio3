@@ -13,7 +13,7 @@ entity Contador60 is
 	
 	ti0: out std_logic;
 	ti1: out std_logic;
-	numerocont 	: out std_logic_vector(5 downto 0);
+	
 	segs: out std_logic_vector(6 downto 0)
 	);
 	
@@ -41,7 +41,7 @@ architecture comportamiento of Contador60 is
 		fin: in std_logic;
 		en:  in std_logic;
 		
-		num: out std_logic_vector(5 downto 0)
+		num: out integer range 0 to 255
 	);
 	end component;
 	
@@ -58,9 +58,9 @@ architecture comportamiento of Contador60 is
 	
 	component bin2bcd
 	port (
-		clk: in std_logic;
-		bin: in std_logic_vector(5 downto 0);
-		bcd :out std_logic_vector(7 downto 0)
+		clk	:	in	std_logic;
+		bin	:	in	integer range 0 to 255;
+		bcd: out std_logic_vector (7 downto 0)
 	);
 	end component;
 	
@@ -100,7 +100,7 @@ end component;
 	
 	signal startin, stopin, f1, f60,q : std_logic;
 	signal bcdmult: std_logic_vector(3 downto 0);
-	signal numin: std_logic_vector(5 downto 0);
+	signal numin: integer range 0 to 255;
 	signal bcdin: std_logic_vector(7 downto 0);
 	
 begin
@@ -120,5 +120,5 @@ begin
 	ti0 <=   f60;
 	ti1 <=  not  f60;
 	
-	numerocont<=numin;
+	
 end comportamiento;

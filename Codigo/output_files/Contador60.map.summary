@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Dec  4 16:15:54 2021
+Analysis & Synthesis Status : Successful - Sun Dec  5 16:45:18 2021
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : Contador60
-Top-level Entity Name : bcd27seg
+Top-level Entity Name : Contador60
 Family : Cyclone IV E
-Total logic elements : 7
-    Total combinational functions : 7
-    Dedicated logic registers : 0
-Total registers : 0
+Total logic elements : 288
+    Total combinational functions : 278
+    Dedicated logic registers : 166
+Total registers : 166
 Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0
