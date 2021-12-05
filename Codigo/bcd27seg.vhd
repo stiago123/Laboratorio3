@@ -7,6 +7,8 @@ entity bcd27seg is
 port(
 	clk: in std_logic;
 	bcd: in std_logic_vector(3 downto 0);
+	
+	hab: out std_logic :='0';
 	seg7: out std_logic_vector(6 downto 0)
 );
 end bcd27seg;

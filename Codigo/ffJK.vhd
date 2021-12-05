@@ -49,10 +49,10 @@ begin
 process(clk,J,K,clear)
 	
 begin
-if en = '1' then
+
 	if clear = '1' then
 		temp <= '0';
-	elsif rising_edge(clk) then
+	elsif rising_edge(clk) and en = '1' then
 		if J = '1' and K = '1' then
 			temp <= not temp;
 		elsif J = '0' and K = '0' then
@@ -63,6 +63,6 @@ if en = '1' then
 			temp <= '0';
 		end if;
 	end if;
-end if;
+
 end process;
 end memoria;

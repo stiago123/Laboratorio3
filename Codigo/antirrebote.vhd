@@ -54,10 +54,10 @@ architecture comportamiento of antirrebote is
 	
 		etapa0: ffD_en port map(clk, slow_clock, not botonstart, temp1);
 		etapa1: ffD_en port map(clk, slow_clock, temp1, temp2);
-		senalstart <= temp1 and (not temp2) and slow_clock;
+		senalstart <= (not temp1) and ( temp2) and (not slow_clock);
 
 		etapa2: ffD_en port map(clk, slow_clock, not botonstop, temp3);
 		etapa3: ffD_en port map(clk, slow_clock, temp3, temp4);
-		senalstop <= temp3 and (not temp4) and slow_clock;
+		senalstop <= (not temp3) and ( temp4) and (not slow_clock);
 		
 end comportamiento;

@@ -13,6 +13,7 @@ entity Contador60 is
 	
 	ti0: out std_logic;
 	ti1: out std_logic;
+	numerocont 	: out std_logic_vector(5 downto 0);
 	segs: out std_logic_vector(6 downto 0)
 	);
 	
@@ -93,6 +94,7 @@ architecture comportamiento of Contador60 is
 		senalstart	: out std_logic;
 		senalstop	: out std_logic
 		
+		
 	);
 end component;
 	
@@ -116,7 +118,7 @@ begin
 	bloquebcdseg:	bcd27seg						port map(bcdmult,  segs);
 	
 	ti0 <=   f60;
-	ti1 <=  not f60;
+	ti1 <=  not  f60;
 	
-	
+	numerocont<=numin;
 end comportamiento;

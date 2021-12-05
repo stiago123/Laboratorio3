@@ -11,6 +11,7 @@ port (
 		en:  in std_logic;
 		
 		num: out std_logic_vector(5 downto 0)
+		
 	);
 end contador;
 
@@ -34,13 +35,13 @@ component ffJK
 begin
 reset <= not rst;
 
-	ffjk0: ffJK port map('1' xor (reset and not q0) ,'1' xor (reset and not q0), fin, reset, en, q0);
-	ffjk1: ffJK port map(q0 or (reset and q1),q0 or (reset and q1) , fin, reset, en, q1);
-	ffjk2: ffJK port map((q0 and q1) or (q2 and q3 and q4 and q5) or (reset and q2),(q0 and q1) or (q2 and q3 and q4 and q5) or (reset and q2) ,  fin, reset, en, q2);
-	ffjk3: ffJK port map((q0 and q1 and q2) or (q2 and q3 and q4 and q5) or (reset and q3),(q0 and q1 and q2) or (q2 and q3 and q4 and q5) or (reset and q3), fin, reset, en, q3);
-	ffjk4: ffJK port map((q0 and q1 and q2 and q3) or (q2 and q3 and q4 and q5) or (reset and q4),(q0 and q1 and q2 and q3) or (q2 and q3 and q4 and q5) or (reset and q4), fin, reset, en, q4);
-	ffjk5: ffJK port map((q0 and q1 and q2 and q3 and q4) or (q2 and q3 and q4 and q5) or (reset and q5),(q0 and q1 and q2 and q3 and q4) or (q2 and q3 and q4 and q5) or (reset and q5), fin, reset, en, q5);
+	ffjk0: ffJK port map('1'  ,'1' , fin, reset, en, q0);
+	ffjk1: ffJK port map(q0 ,q0 , fin, reset, en, q1);
+	ffjk2: ffJK port map((q0 and q1) or (q2 and q3 and q4 and q5) ,(q0 and q1) or (q2 and q3 and q4 and q5) ,  fin, reset, en, q2);
+	ffjk3: ffJK port map((q0 and q1 and q2) or (q2 and q3 and q4 and q5) ,(q0 and q1 and q2) or (q2 and q3 and q4 and q5) , fin, reset, en, q3);
+	ffjk4: ffJK port map((q0 and q1 and q2 and q3) or (q2 and q3 and q4 and q5) ,(q0 and q1 and q2 and q3) or (q2 and q3 and q4 and q5) , fin, reset, en, q4);
+	ffjk5: ffJK port map((q0 and q1 and q2 and q3 and q4) or (q2 and q3 and q4 and q5) ,(q0 and q1 and q2 and q3 and q4) or (q2 and q3 and q4 and q5) , fin, reset, en, q5);
 
-
+	num <= q5 & q4 & q3 & q2 & q1 & q0;
 	
 end contadorisacion;
